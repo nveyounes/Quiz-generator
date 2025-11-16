@@ -67,18 +67,6 @@ The application does **not** use a database. All quizzes are stored in-memory an
 5.  The student makes their selections and clicks **"Submit"**.
 6.  The app calculates the score and displays it in a `MessageBox` (e.g., "Your score: 2/3").
 
----
-
-## 📸 Screenshots
-
-*(This is a perfect place to add screenshots of your running application!)*
-
-| Main Menu | Creating a Quiz | Taking a Quiz | Score Display |
-| :---: | :---: | :---: | :---: |
-|  |  |  |  |
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
