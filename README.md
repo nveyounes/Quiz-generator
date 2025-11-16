@@ -1,89 +1,114 @@
 # 🚀 Générateur de Quiz (C# Quiz Generator)
 
-![Language](https://img.shields.io/badge/language-C%23-blue.svg)
-![Framework](https://img.shields.io/badge/framework-.NET%20WinForms-purple.svg)
-![Platform](https://img.shields.io/badge/platform-Windows-brightgreen.svg)
+### 🛡️ Project Status & Context
 
-This is a **Quiz Generator** application built in C# with Windows Forms. [cite_start]It was created as a mini-project for ISGA[cite: 6]. [cite_start]The application provides a simple interface for two types of users: **Teachers** and **Students**[cite: 41, 44].
+| Status | Tech Stack | Type | Context |
+| :--- | :--- | :--- | :--- |
+| **Complete** | C#, .NET, WinForms | Desktop Application | **ISGA Academic Project** |
 
-[cite_start]Teachers can create custom multiple-choice quizzes [cite: 42][cite_start], and students can select and take these quizzes to receive an immediate score[cite: 45, 47].
+[![GitHub last commit](https://img.shields.io/github/last-commit/nveyounes/Quiz-generator?style=for-the-badge&color=2ecc71)](https://github.com/nveyounes/Quiz-generator)
+[![License](https://img.shields.io/github/license/nveyounes/Quiz-generator?style=for-the-badge&color=3498db)](LICENSE)
+[![Repo Size](https://img.shields.io/github/repo-size/nveyounes/Quiz-generator?style=for-the-badge&color=9b59b6)](https://github.com/nveyounes/Quiz-generator)
+
+---
+
+## ⭐ Project Goal: Desktop Quiz Application
+
+This repository contains a C# Windows Forms (WinForms) application designed as an academic mini-project for ISGA.
+
+The primary objective is to demonstrate object-oriented programming (OOP) principles and GUI development in .NET by creating a simple, two-sided quiz system for teachers and students.
+
+### 📌 Key Features
+* **Role-Based Access:** A main menu that separates the application into two distinct user flows: **Teacher** and **Student**.
+* **Dynamic UI Generation:** The application dynamically creates UI elements (like question labels and answer dropdowns) based on the quiz content.
+* **In-Memory Data Handling:** Utilizes C# `List<T>` collections to manage quizzes and questions during a single application session.
+
+---
+
+## 🛠️ Technology Stack
+
+This application was built using a classic .NET stack for desktop development.
+
+| Category | Technology | Purpose | Icon |
+| :--- | :--- | :--- | :--- |
+| **Language** | C# | Primary programming language for all logic. | ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white) |
+| **Framework** | .NET | Core runtime for the application. | ![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white) |
+| **UI** | Windows Forms | Used for building the graphical user interface. | ![Windows Forms](https://img.shields.io/badge/Windows_Forms-0078D6?style=flat-square&logo=windows&logoColor=white) |
+| **IDE** | Visual Studio | Development environment for building and debugging. | ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white) |
+
+---
+
+## 📂 Application Workflow & Data
+
+### 1. Data Model (In-Memory)
+The application does **not** use a database. All quizzes are stored in-memory and are **lost when the app is closed**.
+
+* **`QuizManager`:** A static class holding a `List<Quiz>` that acts as the temporary, session-only "database".
+* **`Quiz`:** A class that contains a `List<Question>`.
+* **`Question`:** A class holding the `QuestionText` (string), `AnswerOptions` (List), and `CorrectAnswer` (string).
+
+### 2. 🧑‍🏫 Teacher Workflow
+1.  From the main menu, the user selects **"Teacher"**.
+2.  Clicks **"Create a new quiz"**.
+3.  The app asks for the *number* of questions.
+4.  For each question, the app uses `Microsoft.VisualBasic.Interaction.InputBox` pop-ups to ask for:
+    * The question text.
+    * The number of answer options.
+    * Each answer option's text.
+    * The correct answer's text.
+5.  The new `Quiz` object is added to the `QuizManager`'s list.
+6.  The **"Display all quizzes"** option shows all questions and answers in a read-only text box.
+
+### 3. 🧑‍🎓 Student Workflow
+1.  From the main menu, the user selects **"Student"**.
+2.  Clicks **"Select a quiz"**.
+3.  The app asks the user to enter the *quiz number* (e.g., "1" for the first quiz).
+4.  A new form is dynamically generated, displaying each question `Label` and an answer `ComboBox` for all questions in the selected quiz.
+5.  The student makes their selections and clicks **"Submit"**.
+6.  The app calculates the score and displays it in a `MessageBox` (e.g., "Your score: 2/3").
+
+---
 
 ## 📸 Screenshots
 
-*(This is a great place to add screenshots of your application!)*
+*(This is a perfect place to add screenshots of your running application!)*
 
-| Main Menu | Teacher's View | Student's Quiz |
-| :---: | :---: | :---: |
-|  |  |  |
+| Main Menu | Creating a Quiz | Taking a Quiz | Score Display |
+| :---: | :---: | :---: | :---: |
+|  |  |  |  |
 
-## ✨ Features
+---
 
-The application is split into two main roles:
-
-### 🧑‍🏫 Teacher Portal
-* **Create Quizzes:** Easily create a new quiz by specifying the number of questions.
-* **Add Questions:** For each question, add the question text, a variable number of answer options, and designate the correct answer.
-* **View All Quizzes:** Display a list of all quizzes created during the current session.
-
-### 🧑‍🎓 Student Portal
-* **Select Quiz:** Choose from the list of available quizzes (by number).
-* **Take Quiz:** Answer each multiple-choice question using a simple dropdown menu.
-* **Instant Score:** Receive your score immediately in a pop-up message after submitting the quiz.
-
-## 🛠️ Tech Stack
-* **Language:** C#
-* **Framework:** .NET 5.0
-* **UI:** Windows Forms (WinForms)
-* **Data Handling:** In-memory `List<T>` (Quizzes are not persisted after the app closes).
-
-## ⚡ Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-* [.NET SDK (v5.0 or later)](https://dotnet.microsoft.com/download)
-* [Visual Studio 2019/2022](https://visualstudio.microsoft.com/vs/) (Recommended for WinForms)
+* [.NET 5.0 (or newer) SDK](https://dotnet.microsoft.com/en-us/download)
+* [Visual Studio 2019 or 2022](https://visualstudio.microsoft.com/vs/) with the ".NET desktop development" workload installed.
 
-### Running the Application
+### Installation & Usage
+
 1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/nveyounes/Quiz-generator.git](https://github.com/nveyounes/Quiz-generator.git)
     ```
-2.  **Navigate to the source code directory:**
+2.  **Navigate to the source code:**
     ```bash
     cd Quiz-generator/"source code"
     ```
-3.  **Open the project in Visual Studio:**
-    * Open Visual Studio.
-    * Select "Open a project or solution".
-    * Navigate to the `"source code"` folder and open `projet.csproj`.
-4.  **Run the project:**
-    * Press `F5` or click the "Start" button to build and run the application.
+3.  **Run the project in Visual Studio:**
+    * Open **Visual Studio**.
+    * Select **"Open a project or solution"**.
+    * Navigate to the `"source code"` folder and open the `projet.csproj` file.
+    * Press **`F5`** or click the "Start" button to build and run the application.
 
-## 📁 Project Structure
-
-Here is a simplified overview of the project's file structure:
-
-```
-.
-├── C# projet.pdf         # The academic report (in French)
-├── Quiz_Generator.pptx   # Project presentation
-└── source code           # Directory for all C# source files
-    ├── Form1.cs          # Main form logic (Teacher/Student menus, quiz flow)
-    ├── Form1.Designer.cs   # UI layout code (auto-generated)
-    ├── Program.cs        # Main application entry point (launches Form1)
-    ├── projet.csproj       # The C# project file
-    ├── bin/                # Compiled output (binaries)
-    └── obj/                # Build artifacts
-```
+---
 
 ## 👥 Authors & Acknowledgements
 
-This project was created as part of the engineering curriculum at ISGA.
+This was an academic project for **ISGA (EDVANTIS Higher Education Group)**.
 
-* [cite_start]**Younes Farhat** [cite: 4]
-* [cite_start]**Amine Jamal Eddine** [cite: 5]
+* **Younes Farhat**
+* **Amine Jamal Eddine**
 
-### Supervised by:
-* **Mr. [cite_start]LAANAOUI** [cite: 2]
-
----
-[cite_start]*This project was created at ISGA (EDVANTIS Higher Education Group)[cite: 6, 10, 11].*
+### Supervised By:
+* **Mr. LAANAOUI**
