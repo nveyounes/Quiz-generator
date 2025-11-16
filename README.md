@@ -1,12 +1,89 @@
-📚 Générateur de Quiz (Quiz Generator)A desktop application built with C# and Windows Forms that allows teachers to create quizzes and students to take them and receive an instant score. This project was developed as part of a university mini-project.(Add a screenshot of your application's main menu here)🌟 FeaturesThis application provides two distinct roles, each with its own set of functionalities.👨‍🏫 Teacher ModeCreate Quizzes: Easily create new quizzes by specifying the number of questions.Add Questions: For each question, add the question text, multiple-choice options, and designate the correct answer.View All Quizzes: Display a list of all quizzes that have been created during the current session.👩‍🎓 Student ModeSelect a Quiz: Choose from the list of quizzes created by the teacher.Take the Quiz: Answer all questions in a clean and simple interface.Instant Score: Receive your score immediately after submitting the quiz.🛠️ Technology StackLanguage: C#Framework: .NETUser Interface: Windows Forms (WinForms)🚀 How to RunTo run this project on your local machine, you will need Visual Studio and the .NET desktop development workload.Clone the repository:git clone [https://github.com/nveyounes/Quiz-generator.git](https://github.com/nveyounes/Quiz-generator.git)
-Navigate to the source code directory:cd Quiz-generator/source code/
-Open the project:Open Visual Studio.Click on "Open a project or solution".Navigate to the cloned source code folder and select the projet.csproj file.Build and Run:Simply press F5 or click the "Start" button in Visual Studio to build and run the application.📁 Project StructureHere is a simplified overview of the key source files:.
-├── C# projet.pdf         # Full academic report for the project
-├── Quiz_Generator.pptx     # PowerPoint presentation
-└── source code/
-    ├── Form1.cs            # Main application logic and event handling
-    ├── Form1.Designer.cs   # UI component definitions (auto-generated)
-    ├── Program.cs          # The main entry point for the application
+# 🚀 Générateur de Quiz (C# Quiz Generator)
+
+![Language](https://img.shields.io/badge/language-C%23-blue.svg)
+![Framework](https://img.shields.io/badge/framework-.NET%20WinForms-purple.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-brightgreen.svg)
+
+This is a **Quiz Generator** application built in C# with Windows Forms. [cite_start]It was created as a mini-project for ISGA[cite: 6]. [cite_start]The application provides a simple interface for two types of users: **Teachers** and **Students**[cite: 41, 44].
+
+[cite_start]Teachers can create custom multiple-choice quizzes [cite: 42][cite_start], and students can select and take these quizzes to receive an immediate score[cite: 45, 47].
+
+## 📸 Screenshots
+
+*(This is a great place to add screenshots of your application!)*
+
+| Main Menu | Teacher's View | Student's Quiz |
+| :---: | :---: | :---: |
+|  |  |  |
+
+## ✨ Features
+
+The application is split into two main roles:
+
+### 🧑‍🏫 Teacher Portal
+* **Create Quizzes:** Easily create a new quiz by specifying the number of questions.
+* **Add Questions:** For each question, add the question text, a variable number of answer options, and designate the correct answer.
+* **View All Quizzes:** Display a list of all quizzes created during the current session.
+
+### 🧑‍🎓 Student Portal
+* **Select Quiz:** Choose from the list of available quizzes (by number).
+* **Take Quiz:** Answer each multiple-choice question using a simple dropdown menu.
+* **Instant Score:** Receive your score immediately in a pop-up message after submitting the quiz.
+
+## 🛠️ Tech Stack
+* **Language:** C#
+* **Framework:** .NET 5.0
+* **UI:** Windows Forms (WinForms)
+* **Data Handling:** In-memory `List<T>` (Quizzes are not persisted after the app closes).
+
+## ⚡ Getting Started
+
+### Prerequisites
+* [.NET SDK (v5.0 or later)](https://dotnet.microsoft.com/download)
+* [Visual Studio 2019/2022](https://visualstudio.microsoft.com/vs/) (Recommended for WinForms)
+
+### Running the Application
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/nveyounes/Quiz-generator.git](https://github.com/nveyounes/Quiz-generator.git)
+    ```
+2.  **Navigate to the source code directory:**
+    ```bash
+    cd Quiz-generator/"source code"
+    ```
+3.  **Open the project in Visual Studio:**
+    * Open Visual Studio.
+    * Select "Open a project or solution".
+    * Navigate to the `"source code"` folder and open `projet.csproj`.
+4.  **Run the project:**
+    * Press `F5` or click the "Start" button to build and run the application.
+
+## 📁 Project Structure
+
+Here is a simplified overview of the project's file structure:
+
+```
+.
+├── C# projet.pdf         # The academic report (in French)
+├── Quiz_Generator.pptx   # Project presentation
+└── source code           # Directory for all C# source files
+    ├── Form1.cs          # Main form logic (Teacher/Student menus, quiz flow)
+    ├── Form1.Designer.cs   # UI layout code (auto-generated)
+    ├── Program.cs        # Main application entry point (launches Form1)
     ├── projet.csproj       # The C# project file
-    └── ...
-🔮 Future ImprovementsBased on the project's academic report, here are some planned enhancements for the future:💾 Database Persistence: Save quizzes to a file or database so they are not lost when the app closes.Advanced Questions: Add support for images or short-answer questions.Quiz Customization: Allow teachers to set time limits or difficulty levels.User Accounts: Implement a proper login system for teachers and students.Analytics: Provide data and analysis on student performance.✍️ AuthorsYounes Farhat - nveyounesAmine Jamal EddineThis project was supervised by Mr. LAANAQUI.
+    ├── bin/                # Compiled output (binaries)
+    └── obj/                # Build artifacts
+```
+
+## 👥 Authors & Acknowledgements
+
+This project was created as part of the engineering curriculum at ISGA.
+
+* [cite_start]**Younes Farhat** [cite: 4]
+* [cite_start]**Amine Jamal Eddine** [cite: 5]
+
+### Supervised by:
+* **Mr. [cite_start]LAANAOUI** [cite: 2]
+
+---
+[cite_start]*This project was created at ISGA (EDVANTIS Higher Education Group)[cite: 6, 10, 11].*
