@@ -107,8 +107,8 @@ The application does **not** use a database. All quizzes are stored in-memory an
 
 This was an academic project for **ISGA (EDVANTIS Higher Education Group)**.
 
-* **Younes Farhat**
-* **Amine Jamal Eddine**
+* **Younes**
+* **Amine**
 
 ### Supervised By:
 * **Mr. LAANAOUI**
